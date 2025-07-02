@@ -45,6 +45,50 @@ export class Database {
         return data
     }
 
+    update(table, id, data) {
+        // validar se o registro existe
+        let taskIndex = this.#database[table].findIndex(row => row.id === id)
+
+        // caso exista, atualizamos
+        if(taskIndex > -1 ) {
+            // buscamos a task
+            const task = this.#database[table].find(row => row.id === id)
+
+            // atualizamos somente as informações fornecidas
+            this.#database[table][taskIndex] = {
+                id,
+                title: data.title ?? task.title, 
+                description: data.description ?? task.description,
+                completed_at: null,
+                createdAt: task.createdAt,
+                updated_at: new Date()
+            }
+
+            this.#persist()
+            
+        } else {
+            throw new Error("Task not found or not exist")
+            
+        } 
+
+    }
+
+    delete(table, id) {
+        // validar se o registro existe
+        const task = this.#database[table].findIndex(row => row.id === id)
+        
+        // caso exista, deletamos
+        if(task > -1 ) {
+            this.#database[table].splice(task, 1)
+            this.#persist()
+            
+        } else {
+            throw new Error("Task not found or not exist")
+            
+        } 
+
+    }
+
 
 
 }

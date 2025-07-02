@@ -10,11 +10,16 @@ const server = http.createServer( async (req, res) => {
 
     // rotas
     const router = Routers.find((router) => {
-        return router.method === method && router.url === url
+        return router.method === method && router.path.test(url)
     })
 
 
     if(router) {
+        // extraimos os parametros da requisição
+        const routerParams = req.url.match(router.path)
+
+        req.params = { ...routerParams.groups } 
+        
         return router.handle(req, res)
     }
     
