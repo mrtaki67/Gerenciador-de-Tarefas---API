@@ -64,6 +64,24 @@ export const Routers = [
         }
     },
     {
+        method: 'PATCH',
+        path: buildRouterPath('/tasks/:id/complete'),
+        handle: (req, res) => {
+            const { id } = req.params
+
+            try {
+                database.patch("tasks", id)
+
+            } catch (error) {
+
+                return res.writeHead(400).end(error.message)                
+            }
+
+
+            return res.writeHead(204).end()
+        }
+    },
+    {
         method: 'DELETE',
         path: buildRouterPath('/tasks/:id'),
         handle: (req, res) => {
