@@ -6,7 +6,7 @@ export function buildRouterPath(path) {
     // pegamos a path fornecida, e substituimos pelo parametro passado na req
     const pathWithParams = path.replaceAll(routerParametersRegex, '(?<$1>[a-z0-9\-_]+)')
     
-    const pathRegex = new RegExp(`^${pathWithParams}`)
+    const pathRegex = new RegExp(`^${pathWithParams}(?<query>\\?(.*))?$`)
 
     // console.log(Array.from(path.matchAll(routerParametersRegex))) // depuração
 
