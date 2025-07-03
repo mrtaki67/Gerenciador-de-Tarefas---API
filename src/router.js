@@ -10,6 +10,10 @@ export const Routers = [
         path: buildRouterPath('/tasks'),
         handle: (req, res) => {
             const { title, description } = req.body
+
+            if(!title || !description) {
+                return res.writeHead(400).end(`Forneça o titulo e descrição da tarefa.`)
+            }
             
             const task = ({
                 id: randomUUID(),
@@ -47,6 +51,10 @@ export const Routers = [
         handle: (req, res) => {
             const { id } = req.params
             const { title, description } = req.body
+
+            if(!title || !description) {
+                return res.writeHead(400).end(`Forneça o titulo e descrição da tarefa.`)
+            }
 
             try {
                 database.update("tasks", id, {
