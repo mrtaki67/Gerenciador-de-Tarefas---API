@@ -1,0 +1,155 @@
+type: collection.insomnia.rest/5.0
+name: Gerenciador de Tarefas
+meta:
+  id: wrk_fa8607f16e7d409c9c37ca7a660d210e
+  created: 1751481099061
+  modified: 1751495206773
+  description: ""
+collection:
+  - url: localhost:3333/tasks/9000b666-1942-40ce-89d7-cee1372078ed
+    name: tasks/:id
+    meta:
+      id: req_4289f58d30e44d37b4ab376fd905d7a3
+      created: 1751495210100
+      modified: 1751504179155
+      isPrivate: false
+      description: ""
+      sortKey: -1751495210100
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:3333/tasks
+    name: tasks
+    meta:
+      id: req_47320ac9b17d4e6c89fa38b0e4790bed
+      created: 1751495241018
+      modified: 1751504220970
+      isPrivate: false
+      description: ""
+      sortKey: -1751440682633.5
+    method: GET
+    parameters:
+      - id: pair_2fa72b1fa8144c808f63aa32a0ab1922
+        name: search
+        value: asdasd
+        description: ""
+        disabled: true
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:3333/tasks
+    name: tasks
+    meta:
+      id: req_01f50908c37f407483ebc2e3bfe0b2d6
+      created: 1751497467219
+      modified: 1751504199445
+      isPrivate: false
+      description: ""
+      sortKey: -1751467946366.75
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"title": "Andar de bike",
+        	"description": "pedalar 10k por dia"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:3333/tasks/5526d61b-c518-4582-b5bd-47c62b095453
+    name: tasks/:id
+    meta:
+      id: req_aaa3260f57a443ed801d654505ba90ce
+      created: 1751498011714
+      modified: 1751504213605
+      isPrivate: false
+      description: ""
+      sortKey: -1751454314500.125
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"title": "Andar de bike",
+        	"description": "pedalar 10k por dia"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:3333/tasks/090e7933-0495-45a9-871e-0adc4b8b9c02/complete
+    name: tasks/:id
+    meta:
+      id: req_0fe0a3377dab4962bcab86ed1df2322e
+      created: 1751500986778
+      modified: 1751504216770
+      isPrivate: false
+      description: ""
+      sortKey: -1751447498566.8125
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: ""
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_0d98dd71ec22596b3ee330f73e24f3ccf13b4212
+    created: 1751495206828
+    modified: 1751495206828
+environments:
+  name: Base Environment
+  meta:
+    id: env_0d98dd71ec22596b3ee330f73e24f3ccf13b4212
+    created: 1751481099064
+    modified: 1751495206761
+    isPrivate: false
